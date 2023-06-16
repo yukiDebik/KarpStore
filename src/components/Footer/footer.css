@@ -1,0 +1,48 @@
+
+
+.footer {
+    background: var(--primary-color);
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.footer__text {
+    line-height: 30px;
+    color: #d2d2d2;
+}
+
+.footer__quick-links ul li {
+    background: transparent !important;
+}
+
+.footer__quick-links ul li a {
+    color: #d2d2d2;
+}
+
+.quick__links-title {
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.footer__address li span,
+.footer__address li p {
+    color: #d2d2d2;
+}
+
+.footer__address li span {
+    font-size: 1.2rem;
+}
+
+.footer__address li p {
+    font-size: 0.9rem;
+}
+
+.footer__contact li span img {
+    width: 2.1rem;
+    height: 2.1rem;
+}
+
+.footer__contact li p {
+    color: #d2d2d2;
+}

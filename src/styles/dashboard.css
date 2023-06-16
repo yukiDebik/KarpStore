@@ -1,0 +1,35 @@
+.revenue__box,
+.orders__box,
+.products__box,
+.users__box {
+    margin: 5px;
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--card-bg-01);
+}
+
+.revenue__box h5,
+.orders__box h5,
+.products__box h5,
+.users__box h5 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.revenue__box span,
+.orders__box span,
+.products__box span,
+.users__box span {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.action__box {
+    margin: 5px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
