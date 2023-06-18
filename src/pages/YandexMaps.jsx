@@ -25,13 +25,12 @@ const YandexMaps = () => {
                     <Row>
                         <Col lg="12" md="12">
                             <YMaps
-                                query={{ apikey: '17ee4433-5fdb-4824-ac3b-635c84a5e561' }}
-                            >
-                                <div className="yandex__map">
+                                query={{ apikey: '17ee4433-5fdb-4824-ac3b-635c84a5e561' }} >
+                                <div>
                                     <Map
-                                        defaultState={{ center: [51.78265382628901, 55.08487558805016], zoom: 13 }} 
-                                        width={1024}
-                                        height={512}>
+                                        width="auto"
+                                        height="600px"
+                                        defaultState={{ center: [51.78265382628901, 55.08487558805016], zoom: 13 }} >
 
                                         {/* Zoom control */}
                                         <ZoomControl options={{ float: "right" }} />

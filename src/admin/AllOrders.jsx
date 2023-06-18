@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Row, Col, FormGroup } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import useGetData from "../custom-hooks/useGetData";
 import { db } from "../firebase.config";
 import { doc, deleteDoc } from "firebase/firestore";
@@ -8,11 +8,14 @@ import { doc, deleteDoc } from "firebase/firestore";
 import Helmet from "../components/Helmet/Helmet";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
-import { cartActions } from "../redux/slices/cartSlice";
+//import { cartActions } from "../redux/slices/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const AllOrders = () => {
+
+    const navigate = useNavigate();
 
     const { data: ordersData, loading } = useGetData("orders");
 
@@ -21,6 +24,10 @@ const AllOrders = () => {
     const deleteOrder = async(id) => {
         await deleteDoc(doc(db, "orders", id));
         toast.success("Заказ успешно удалён");
+    };
+
+    const navigateOrderDetails = () => {
+        navigate("/dashboard/order-details");
     };
 
     return (
@@ -58,8 +65,9 @@ const AllOrders = () => {
                                                 <td>
                                                     <motion.button 
                                                         whileTap={{ scale: 1.1 }}
-                                                        className="buy__btn my-0">
-                                                        Показать
+                                                        className="buy__btn my-0"
+                                                        onClick={navigateOrderDetails}>
+                                                        Детали
                                                     </motion.button>
                                                 </td>
                                                 <td>{item.buyerQuantity}</td>
@@ -85,20 +93,6 @@ const AllOrders = () => {
             </section>
         </Helmet>
 
-    );
-}
-
-const Tr = ({ item }) => {
-
-    return (
-        <tr>
-            <td>
-                <img src={item.imgUrl} alt="img" />
-            </td>
-            <td>{item.productName}</td>
-            <td>₽ {item.price}</td>
-            <td>{item.quantity}шт</td>
-        </tr>
     );
 }
 
