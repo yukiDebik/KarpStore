@@ -11,6 +11,7 @@ import "../styles/dashboard.css";
 const Dashboard = () => {
 
     const { data: products } = useGetData("products");
+    const { data: orders } = useGetData("orders");
     const { data: users } = useGetData("users");
 
     return (
@@ -20,16 +21,16 @@ const Dashboard = () => {
                 <section>
                     <Container>
                         <Row>
-                            <Col className="lg-3">
+                            {/* <Col className="lg-3">
                                 <div className="revenue__box">
                                     <h5>Всего продано</h5>
                                     <span>₽ 7800</span>
                                 </div>
-                            </Col>
+                            </Col> */}
                             <Col className="lg-3">
                                 <div className="orders__box">
                                     <h5>Заказы</h5>
-                                    <span>10</span>
+                                    <span>{orders.length}</span>
                                 </div>
                             </Col>
                             <Col className="lg-3">

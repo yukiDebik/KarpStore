@@ -11,8 +11,8 @@ const Users = () => {
 
     const { data: usersData, loading } = useGetData("users");
 
-    const deleteUser = async (id) => {
-        await deleteDoc(doc(db, "users", id));
+    const deleteUser = async (uid) => {
+        await deleteDoc(doc(db, "users", uid));
         toast.success("Пользователь успешно удалён");
     };
 

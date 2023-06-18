@@ -20,7 +20,7 @@ const admin__nav = [
     },
     {
         display: "Заказы",
-        path: "/dashboard/orders"
+        path: "/dashboard/all-orders"
     },
     {
         display: "Пользователи",
