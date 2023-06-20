@@ -76,7 +76,7 @@ const Home = () => {
                 </p>
 
                 <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">
-                  <Link to="/shop">Купить</Link>
+                  <Link to="/shop">Каталог</Link>
                 </motion.button>
               </div>
             </Col>
@@ -142,7 +142,7 @@ const Home = () => {
                 whileTap={{ scale: 1.1 }}
                 className="buy__btn store__btn"
               >
-                <Link to="/shop">Посетить магазин</Link>
+                <Link to="/shop">Каталог</Link>
               </motion.button>
             </Col>
 

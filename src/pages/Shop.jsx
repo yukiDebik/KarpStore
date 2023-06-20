@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-
 import CommonSection from "../components/UI/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
-
 import ProductsList from "../components/UI/ProductsList";
-
 import useGetData from "../custom-hooks/useGetData";
 
 // CSS
@@ -91,15 +88,6 @@ const Shop = () => {
                                 </select>
                             </div>
                         </Col>
-                        {/* <Col lg="3" md="6" className="text-end">
-                            <div className="filter__widget">
-                                <select>
-                                    <option>Сортировать по</option>
-                                    <option value="ascending">По возрастанию</option>
-                                    <option value="descending">По убыванию</option>
-                                </select>
-                            </div>
-                        </Col> */}
                         <Col lg="6" md="12">
                             <div className="search__box">
                                 <input 
@@ -119,10 +107,10 @@ const Shop = () => {
             <section className="pt-0">
                 <Container>
                     <Row>
-                        {productsData.length === 0 ? (
+                        {products.length === 0 ? (
                             <h1 className="text-center fs-4">Товар не найден</h1>
                         ) : (
-                            <ProductsList data={productsData} />
+                            <ProductsList data={products} />
                         )}
                     </Row>
                 </Container>
