@@ -29,7 +29,6 @@ const Checkout = () => {
     const [enterEmail, setEnterEmail] = useState(auth.currentUser.email);
     const [enterPhoneNumber, setEnterPhoneNumber] = useState("");
     const [enterAddress, setEnterAddress] = useState("");
-    const [enterProduct, setEnterProduct] = useState("");
 
     const totalQty = useSelector((state) => state.cart.totalQuantity);
     const totalAmount = useSelector((state) => state.cart.totalAmount);
@@ -39,9 +38,9 @@ const Checkout = () => {
         
         try {
 
-            const uid = auth.currentUser.uid;
+            // const uid = auth.currentUser.uid;
             const docRef = collection(db, "orders");
-            const cartData = collection(db, "cart" + " " + uid);
+            // const cartData = collection(db, "cart" + " " + uid);
 
             await addDoc(docRef, {
                 buyerOrderId: enterOrderId,
@@ -50,12 +49,17 @@ const Checkout = () => {
                 buyerAddress: enterAddress,
                 buyerQuantity: totalQty,
                 buyerPayment: totalAmount,
+                products: cartItems,
             });
 
-            await addDoc(cartData, {
-                buyerOrderId: enterOrderId,
-                buyerProduct: enterProduct,
-            });
+            // await addDoc(cartData, {
+            //     buyerOrderId: enterOrderId,
+            //     buyerName: enterName,
+            //     buyerEmail: enterEmail,
+            //     buyerAddress: enterAddress,
+            //     buyerQuantity: totalQty,
+            //     buyerPayment: totalAmount,
+            // });
 
             toast.success("Заказ успешно оформлен");
             toast.success("Через пару секунд вы перейдёте на главную страницу");
@@ -110,14 +114,6 @@ const Checkout = () => {
                                         <input type="text" placeholder="Введите адрес" 
                                         value={enterAddress} onChange={(e) => setEnterAddress(e.target.value)}
                                         required />
-                                    </FormGroup>
-
-                                    <FormGroup className="form__group">
-                                        <input type="text" placeholder="Товары" 
-                                        value={enterProduct} onChange={(e) => setEnterProduct(e.target.value)}
-                                        required >
-                                            
-                                        </input>
                                     </FormGroup>
 
                                     <FormGroup className="form__group w-50">
